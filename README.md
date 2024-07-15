@@ -27,3 +27,10 @@ git remote add origin https://github.com/webstoryboy/mern-blogTest.git
 git branch -M main
 git push -u origin main
 ```
+
+```bash
+npm init -y
+npm i express
+npm i nodemon
+npm i mongoose
+```
