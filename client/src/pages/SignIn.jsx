@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-    signInStart,
-    signInSuccess,
-    signInFailure,
-} from "../redux/user/userSlice";
+import { signInStart, signInSuccess, signInFailure } from "../redux/user/userSlice";
 
 export default function SignIn() {
     const [formData, setFormData] = useState();
@@ -56,40 +52,16 @@ export default function SignIn() {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">email</label>
-                    <input
-                        type="email"
-                        placeholder="email"
-                        id="email"
-                        className="p-3 border"
-                        onChange={handleChange}
-                    />
+                    <input type="email" placeholder="email" id="email" className="p-3 border" onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="password">password</label>
-                    <input
-                        type="password"
-                        placeholder="password"
-                        id="password"
-                        className="p-3 border"
-                        onChange={handleChange}
-                    />
+                    <input type="password" placeholder="password" id="password" className="p-3 border" onChange={handleChange} />
                 </div>
 
-                {errorMessage && (
-                    <div className="p-2 px-4 mt-5 text-red-500 bg-red-200">
-                        {errorMessage}
-                    </div>
-                )}
-                <button
-                    type="submit"
-                    className="p-3 mt-3 border"
-                    disabled={loading}
-                >
-                    {loading ? (
-                        <span className="p-2">Loading...</span>
-                    ) : (
-                        "로그인하기"
-                    )}
+                {errorMessage && <div className="p-2 px-4 mt-5 text-red-500 bg-red-200">{errorMessage}</div>}
+                <button type="submit" className="p-3 mt-3 border" disabled={loading}>
+                    {loading ? <span className="p-2">Loading...</span> : "로그인하기"}
                 </button>
             </form>
             <div className="flex mt-10">
